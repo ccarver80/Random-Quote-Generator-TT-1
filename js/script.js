@@ -32,7 +32,7 @@ var quotes = [
     quote: "Praying for the end of time...",
     source: "Meatloaf",
     citation: "Paradise By The Dashboard Light",
-    year: 1977,
+    year: "1977",
     catagory: "Music" // EXTRA CREDIT *Bonus Property*
   },
 
@@ -80,21 +80,21 @@ function getRandomQuote() {
 function printQuote() {
   let randQuote = getRandomQuote(); // stores random quote into a varible
 
-  let htmlString = `<p class='quote'>"${randQuote.quote}"</p>  <p class='source'>"${randQuote.source}"`
+  let htmlString = `<p class='quote'>${randQuote.quote}</p>  <p class='source'>${randQuote.source}`
 
    // found in operator at https://dmitripavlutin.com/check-if-object-has-property-javascript/
    //checks to see if "randQuote" has a citation value
     if ('citation' in randQuote == true ) {
-      htmlString += `<span class='citation'>"${randQuote.citation}"</span>`// adds citation value to htmlString
+      htmlString += `<span class='citation'>${randQuote.citation}</span>`// adds citation value to htmlString
     }
 
     //checks to see if "randQuote" has a year value
     if ('year' in randQuote == true) {
-      htmlString += `<span class='year'>"${randQuote.year}", </span>` //add year value to htmlString
+      htmlString += `<span class='year'>${randQuote.year}</span>` //add year value to htmlString
     }
 
     if ('catagory' in randQuote == true) {
-      htmlString += `<span class='catagory'>"${randQuote.catagory}"</span>` // adds BONUS property
+      htmlString += `<span class='catagory'>, ${randQuote.catagory}</span>` // adds BONUS property
     }
 
  //close the last <p>
@@ -107,7 +107,7 @@ function printQuote() {
 
   }
 
-setInterval(printQuote,10000);
+// setInterval(printQuote,10000);
 
 
 
