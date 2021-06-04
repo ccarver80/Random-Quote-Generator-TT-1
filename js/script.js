@@ -55,6 +55,7 @@ function getRandomQuote() {
 }
 
 //EXTRA CREDIT BACKGROUND CHANGER *over 16 million possible colors!!*
+
       // simple random number function, will get a random number between 1 and 255 for the rgb value
       function randomNum() {
         return Math.floor(Math.random() * 255);
