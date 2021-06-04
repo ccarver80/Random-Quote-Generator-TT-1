@@ -67,7 +67,7 @@ function getRandomQuote() {
       function newClick() {
         for (let i = 1; i<=3; i++) { // will only loop 3 times
           if (num.length > 2) { // makes sure there is only 3 numbers in the array at all times
-           num.shift();
+           num.shift(); //deletes 4th number from array if there is one
          }
           num.push(randomNum()); //each time of the for loop a random number gets pushed to "num array"
       };
@@ -107,7 +107,9 @@ function printQuote() {
 
   }
 
-// setInterval(printQuote,10000);
+
+
+setInterval(printQuote,10000); //EXTRA CREDIT refreshes as if button was clicked every 10 secs (10,000 milliseconds)
 
 
 
