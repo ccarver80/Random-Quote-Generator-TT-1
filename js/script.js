@@ -82,7 +82,7 @@ function printQuote() {
 
   let htmlString = `<p class='quote'>${randQuote.quote}</p>  <p class='source'>${randQuote.source}`
 
-   // found in operator at https://dmitripavlutin.com/check-if-object-has-property-javascript/
+   // found "in" operator at https://dmitripavlutin.com/check-if-object-has-property-javascript/
    //checks to see if "randQuote" has a citation value
     if ('citation' in randQuote == true ) {
       htmlString += `<span class='citation'>${randQuote.citation}</span>`// adds citation value to htmlString
