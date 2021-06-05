@@ -1,4 +1,4 @@
-/** 
+/**
  * Treehouse FSJS Techdegree
  * Random Quote Generator - CSS
  */
@@ -22,8 +22,17 @@ header {
   padding: 5px;
 }
 
+
 h1 {
   text-shadow: 1px 1px 1px rgba(50, 50, 50, 0.3);
+}
+
+.imgs {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 10rem;
+  margin-top: 4rem;
 }
 
 .load-quote {
@@ -115,6 +124,8 @@ h1 {
   font-style: normal;
 }
 
+
+
 @media (min-width: 768px) {
   body {
     padding: 25px;
@@ -131,6 +142,15 @@ h1 {
     margin-right: 5px;
     border-bottom: 4px solid rgba(0, 0, 0, 0.3);
   }
+
+  .imgs {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 20rem;
+    margin-top: 6rem;
+  }
+
 
   .load-quote {
     font-size: 1.5rem;

@@ -4,12 +4,45 @@ project 1 - A Random Quote Generator
 ******************************************/
 
 // Array to store objects containing certain poperties of the quotes
-var quotes = [
+let quotes = [
+
+  {
+    quote: "It's over Anakin, I have the high ground.",
+    source: "Obi-Wan Kenobi",
+    citation: "Star Wars Episode III Revenge Of The Sith ",
+    image: "imgs/Obiwan.jpg"
+  },
+
+
+  {
+    quote: "Never forget what you are. The rest of the world will not. Wear it like armour, and it can never be used to hurt you.",
+    source: "Tyrion Lannister",
+    citation: "Game Of Thrones",
+    image: "imgs/GOT.jpeg"
+  },
+
+  {
+    quote: "She Turn Me Into A Newt..... Well I Got Better",
+    source: "Random Villager",
+    citation: "Monty Python and the Holy Grail",
+    year: "1975",
+    image: "imgs/newt.jpg"
+
+  },
+
+  {
+    quote: "You Miss 100% Of The Shots You Dont Take - Wayne Gretzky",
+    source: "Michael Scott",
+    citation: "The Office",
+    image: "imgs/office_wayne.jpeg"
+  },
+
   {
     quote: "Tis But A Scratch",
     source: "The Black Knight",
     citation: "Monty Python and the Holy Grail",
-    year: "1975"
+    year: "1975",
+    image: "imgs/black_knight.png"
   },
 
   {
@@ -17,14 +50,16 @@ var quotes = [
     source: "Maverick",
     citation: "Top Gun",
     year: "1986",
-    catagory: "Movies" // EXTRA CREDIT *Bonus Property*
+    catagory: "Movies",
+    image: "imgs/maverick.jpg" // EXTRA CREDIT *Bonus Property*
   },
 
   {
     quote: "SSSSSSSSSSS",
     source: "Creeper",
     citation: "Minecraft",
-    catagory: "Gaming" // EXTRA CREDIT *Bonus Property*
+    catagory: "Gaming",
+    image: "imgs/creeper.jpg" // EXTRA CREDIT *Bonus Property*
 
   },
 
@@ -33,14 +68,16 @@ var quotes = [
     source: "Meatloaf",
     citation: "Paradise By The Dashboard Light",
     year: "1977",
-    catagory: "Music" // EXTRA CREDIT *Bonus Property*
+    catagory: "Music", // EXTRA CREDIT *Bonus Property*
+    image: "imgs/meatloaf.jpeg"
   },
 
   {
     quote: "Gimme, gimme, symphonies",
     source: "Dan Black & Kid Cudi",
     citation: "Symphonies",
-    year: 2009
+    year: 2009,
+    image: "imgs/danBlack.jpg"
   },
 
 
@@ -81,6 +118,8 @@ function getRandomQuote() {
 function printQuote() {
   let randQuote = getRandomQuote(); // stores random quote into a varible
 
+  let imgString = ""; // create empty img varible for later
+
   let htmlString = `<p class='quote'>${randQuote.quote}</p>  <p class='source'>${randQuote.source}`
 
    // found "in" operator at https://dmitripavlutin.com/check-if-object-has-property-javascript/
@@ -101,16 +140,17 @@ function printQuote() {
  //close the last <p>
   htmlString +=`</p>`;
 
+  if ('image' in randQuote == true) {
+   imgString += `<img class="imgs" src="${randQuote.image}">`
+  }
+
   //adds the htmlString to the webpage
   document.getElementById('quote-box').innerHTML = htmlString;
+  document.getElementById('images').innerHTML = imgString;
 
   newClick();// changes background color on each click
 
   }
-
-
-
-setInterval(printQuote,10000); //EXTRA CREDIT refreshes as if button was clicked every 10 secs (10,000 milliseconds)
 
 
 
@@ -120,3 +160,5 @@ setInterval(printQuote,10000); //EXTRA CREDIT refreshes as if button was clicked
 ***/
 
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
+
+setInterval(printQuote,10000); //EXTRA CREDIT refreshes as if button was clicked every 10 secs (10,000 milliseconds)
