@@ -7,6 +7,13 @@ project 1 - A Random Quote Generator
 let quotes = [
 
   {
+    quote: "Am I weird? Yeah. But so what? Everybody's weird.",
+    source: "Steven King",
+    citation: "Differnt Seasons",
+    image: "imgs/steven.jpg"
+  },
+
+  {
     quote: "It's over Anakin, I have the high ground.",
     source: "Obi-Wan Kenobi",
     citation: "Star Wars Episode III Revenge Of The Sith ",
@@ -85,11 +92,29 @@ let quotes = [
 ];
 
 
+/*************
+**************/
+
+
 //picks a random quote from the quotes array
+
+let quotenumber;// varible for which quote to get
+
 function getRandomQuote() {
   let randNum = Math.floor(Math.random() * quotes.length); // picks a random number between 0 and 1 and muliplys it by the length of the array and rounds down
-  return quotes[randNum];
+
+
+  if (randNum == quotenumber) {
+    quotenumber= randNum + 1;
+  } else {                    // if else statment to make sure there is no repeated quotes
+    quotenumber = randNum;
+  }
+  return quotes[quotenumber];
 }
+
+/*************
+**************/
+
 
 //EXTRA CREDIT BACKGROUND CHANGER *over 16 million possible colors!!*
 
@@ -114,7 +139,12 @@ function getRandomQuote() {
 
       }
 
+      /*************
+      **************/
 
+
+
+// this function is what changes the innerHTML each time the button is clicked
 function printQuote() {
   let randQuote = getRandomQuote(); // stores random quote into a varible
 
@@ -146,19 +176,19 @@ function printQuote() {
 
   //adds the htmlString to the webpage
   document.getElementById('quote-box').innerHTML = htmlString;
+
+  //adds the imgString to the website
   document.getElementById('images').innerHTML = imgString;
 
   newClick();// changes background color on each click
 
   }
 
+  /*************
+  **************/
 
-
-/***
- * click event listener for the print quote button
- * DO NOT CHANGE THE CODE BELOW!!
-***/
-
+// button click event
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
+
 
 setInterval(printQuote,10000); //EXTRA CREDIT refreshes as if button was clicked every 10 secs (10,000 milliseconds)
