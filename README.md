@@ -1,4 +1,4 @@
-
+# Chris Carver
 Team Treehouse Tech Degree Project #1,: Random Quote Generator
 
 Using the basics of Javascript, I was able to build 5 random quotes into objects and store them in an array.
